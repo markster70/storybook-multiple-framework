@@ -1,0 +1,30 @@
+{
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.0.0",
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-interactions": "^8.0.0",
+    "@storybook/addon-links": "^8.0.0",
+    "@storybook/html-vite": "^8.2.10",
+    "@storybook/react-vite": "^8.0.0",
+    "@storybook/web-components-vite": "^8.0.0",
+    "@storybook/blocks": "^8.0.6",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@whitespace/storybook-addon-html": "^6.1.1",
+    "concurrently": "^9.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^8.5.1",
+    "vite": "^5.0.0",
+    "vite-css-modules": "^1.6.0",
+    "wait-on": "^8.0.4"
+  },
+  "scripts": {
+    "sbook-children": "concurrently \"npm run storybook -- --config-dir .storybook-react --port 6001 --no-open\"  \"npm run storybook -- --config-dir .storybook-web-components --port 6002 --no-open\"",
+    "sbook-parent": "wait-on http://localhost:6001 && wait-on http://localhost:6002 && npm run storybook",
+    "sbook-multi": "concurrently \"npm run sbook-children\" \"npm run sbook-parent\"",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  }
+}

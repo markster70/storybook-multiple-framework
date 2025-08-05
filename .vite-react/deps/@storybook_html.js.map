@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/@storybook/html/dist/index.mjs"],
+  "sourcesContent": ["import { global } from '@storybook/global';\n\nvar{window:globalWindow}=global;globalWindow.STORYBOOK_ENV=\"HTML\";typeof module<\"u\"&&module?.hot?.decline();\n"],
+  "mappings": ";;;;;;;;AAAA,oBAAuB;AAEvB,IAAG,EAAC,QAAO,aAAY,IAAE;AAAO,aAAa,gBAAc;AAF3D;AAEkE,OAAO,SAAO,SAAK,sCAAQ,QAAR,mBAAa;",
+  "names": []
+}
